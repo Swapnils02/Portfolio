@@ -1,0 +1,37 @@
+@keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes scroll-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .scroll-left {
+      animation: scroll-left 20s linear infinite;
+    }
+
+    .scroll-right {
+      animation: scroll-right 20s linear infinite;
+    }
+
+    .circle-animation {
+      stroke-dasharray: 314;
+      stroke-dashoffset: 47;
+    }
+
+     @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px #aabe76, 0 0 20px #57c27b, 0 0 30px #89ca6b;
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 20px #80b5c2, 0 0 30px #a1a3a5, 0 0 40px #c4caeb;
+        transform: scale(1.05);
+      }
+    }
+
+    .glow-text {
+      animation: glow 2.5s infinite ease-in-out;
+    }

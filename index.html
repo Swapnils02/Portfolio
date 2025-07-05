@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+    <title>Swapnil-Portfolio</title>
+</head>
+<body class="overflow-x-hidden font-Outfit dark:bg-darkTheme dark:text-white leading-8">
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[80%] dark:hidden">
+        <img src="./images/header_bg_color.png" alt="" class="w-full">
+    </div>
+
+    <!--Navbar Section-->
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+      <h1 class="glow-text text-3xl md:text-4xl font-semibold tracking-widest text-black dark:text-white">
+    Swapnil
+  </h1>
+        <ul class="hidden md:flex items-center dark:border dark:border-white/50 dark:bg-transparent gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white -sm bg-opacity-50">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About Me</a></li>            
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#profiles">Profiles</a></li>              
+            <li><a href="#projects">Projects</a></li>           
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="flex items-center gap-4">
+            <button onclick="toggleTheme()">
+                <img src="./images/moon.png" alt="Moon" class="w-7 h-7 dark:hidden">
+                <img src="./images/sun.png" alt="Moon" class="w-8 h-9 hidden dark:block">
+            </button>
+            <a href="https://www.linkedin.com/in/swapnil-suryawanshi2808" class="hidden dark:border-white/50 lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4">Let's Connect 
+                <img src="./images/connect.png" alt="arrow" class="w-5 h-5 dark:hidden">
+                <img src="./images/connect_dark.png" alt="arrow" class="w-7 h-7 hidden dark:block">
+            </a>
+            <button onclick="openMenu()" class="block md:hidden ml-3">
+                <img src="./images/menu_dark.png" alt="menu" class="w-9 h-9 dark:hidden">
+                <img src="./images/menu.png" alt="menu" class="w-7 h-7 hidden dark:block">
+            </button>
+        </div>
+
+        <!----Mobile Menu---->
+        <ul id="sideMenu" class="dark:bg-gray-400 dark:text-black flex md:hidden flex-col gap-3 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500">
+            <div onclick="closeMenu()" class="absolute right-6 top-6">
+                <img src="./images/close.png" alt="cross" class="w-5 cursor-pointer dark:hidden">
+                <img src="./images/close.png" alt="cross" class="w-5 cursor-pointer hidden dark:block">
+            </div>
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About Me</a></li>            
+            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>   
+            <li><a href="#profiles" onclick="closeMenu()">Profiles</a></li>            
+            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>           
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--Header Section-->
+    <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+        <img src="./images/profile.jpeg" alt="profile" class="w-40 h-40 mt-30 rounded-full">
+        <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">Hi! I'm Swapnil Suryawanshi <img src="./images/hand.png" alt="hand" class="w-12 h-12"></h3>
+        <h1 class="text-3xl sm:text-6xl lg:text-[40px] font-Ovo">Frontend Web Developer</h1>
+        <p class="max-w-2xl max-auto font-Ovo hidden md:block">I'm a seasoned front-end developer with hands-on experience in
+                crafting web applications that not only look visually stunning but also deliver exceptional user
+                experiences.</p>
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <a href="#contact" class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#aabe76] to-[#57c27b] text-white text-wrap flex items-center gap-2 dark:border-transparent">Contact Me <img src="./images/right_arrow.png" alt="arrow" class="w-7 h-7"></a>
+            <a href="./images/Resume.pdf" download class="px-10 py-3 border border-gray-500 rounded-full text-wrap flex items-center gap-2 bg-white dark:text-black dark:text-bold">Download resume<img src="./images/download.png" alt="arrow" class="w-5 h-5"></a>
+        </div>
+    </div>
+
+    <!--About Section-->
+    <div id="about" class="w-full scroll-mt-25 px-[10%] py-20 md:px-[12%] md:py-10 md:scroll-mt-10">
+      <h4 class="text-center mb-2 text-lg">Introduction</h4>
+        <h2 class="text-center text-5xl">About Me</h2>
+        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-5">
+            <div class="max-w-max mx-auto relative">
+                <img src="./images/profile.jpeg" alt="profile" class="w-64 h-80 sm:w-80 sm:h-80 max-w-none rounded-3xl transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="flex-1">
+                <p class="mb-4 max-w-2xl max-auto font-Ovo">I am a passionate Competitive Programmer with a strong foundation in programming and a deep interest in exploring emerging technologies. As an IT student, I thrive on solving complex problems on various competitive coding platforms, constantly honing my analytical and algorithmic thinking.</p>
+                <ul class=" grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                    <li class="dark:border-white dark:hover:-white dark:hover:bg-darkHover/10 border-[0.5px] border-gray-400 rounded-xl p-6  hover:bg-[#darkHover] hover:-translate-y-1 duration-500 hover:-black cursor-pointer">
+                        <img src="./images/education.png" alt="code" class="w-9 h-9 mt-3 dark:hidden">
+                        <img src="./images/education_dark.png" alt="code" class="w-9 h-9 mt-3 hidden dark:block">
+                        <h3 class="my-2 font-semibold text-gray-700  dark:text-white">Education</h3>
+                        <p class="text-gray-700 text-sm dark:text-white/80">Completed B.Tech in Information technology</p>
+                        <p class="text-gray-700 text-sm dark:text-white/80">PCCOE, Pune</p>
+                        <p class="text-gray-700 text-sm dark:text-white/80">CGPA: 8.24/10</p>
+                    </li>
+                    <li class="dark:border-white dark:hover:-white dark:hover:bg-darkHover/10 border-[0.5px] border-gray-400 rounded-xl p-6 hover:bg-[#darkHover] hover:-translate-y-1 duration-500 hover:-black cursor-pointer">
+                        <img src="./images/experience.png" alt="code" class="w-9 h-9 mt-3 dark:hidden">
+                        <img src="./images/experience_dark.png" alt="code" class="w-9 h-9 mt-3 text-white hidden dark:block">
+                        <h3 class="my-2 font-semibold text-gray-700 dark:text-white">Experience</h3>
+                        <p class="text-gray-700 text-sm dark:text-white/80">Octanet Services Pvt.Ltd</p>
+                        <p class="text-gray-700 text-sm dark:text-white/80">Frontend Developer</p>
+                        <p class="text-gray-700 text-sm dark:text-white/80">June 2024 - July 2024</p>
+                    </li>
+                    <li class="dark:border-white dark:hover:-white dark:hover:bg-darkHover/10 border-[0.5px]  border-gray-400 rounded-xl p-6 hover:bg-[#darkHover] hover:-translate-y-1 duration-500 hover:-black cursor-pointer">
+                        <img src="./images/project.png" alt="code" class="w-6 h-6 mt-3 dark:hidden">
+                        <img src="./images/project_dark.png" alt="code" class="w-6 h-6 mt-3 hidden dark:block">
+                        <h3 class="my-2 font-semibold text-gray-700  dark:text-white">Projects</h3>
+                        <p class="text-gray-700 text-sm dark:text-white/80">Built Projects</p>
+                        <p class="text-gray-700 text-sm dark:text-white/80">Using Technologies HTML, CSS , JavaScript, React</p>
+                        <p class="text-gray-700 text-sm dark:text-white/80">MongoDB, Tailwind and Bootstrap</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Skills Section-->
+     <div id="skills" class="w-full px-[12%] py-20 scroll-mt-10 overflow-hidden">
+    <h4 class="text-center mb-2 text-lg">Technologies I Know</h4>
+    <h2 class="text-center text-5xl mb-10 font-bold">My Skills</h2>
+    <div class="overflow-hidden mb-2">
+      <div class="flex w-max gap-8 scroll-left">
+        <div class="flex gap-8">
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/html.png" alt="HTML" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">HTML</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/css.png" alt="CSS" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">CSS</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/js.png" alt="JavaScript" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">JavaScript</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/react.png" alt="React" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">React</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/bootstrap.png" alt="Bootstrap" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Bootstrap</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/tailwind.png" alt="Tailwind" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Tailwind</p>
+          </div>
+        </div>
+
+        <div class="flex gap-8">
+           <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/html.png" alt="HTML" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">HTML</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/css.png" alt="CSS" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">CSS</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/js.png" alt="JavaScript" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">JavaScript</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/react.png" alt="React" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">React</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/bootstrap.png" alt="Bootstrap" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Bootstrap</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/tailwind.png" alt="Tailwind" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Tailwind</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overflow-hidden mt-2">
+      <div class="flex w-max gap-8 scroll-right">
+        <div class="flex gap-8">
+           <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/node.png" alt="HTML" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Node</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/express.png" alt="CSS" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Express</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/mongodb.png" alt="JavaScript" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">MongoDB</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/sql.png" alt="React" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">SQL</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/cpp.png" alt="Bootstrap" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">C++</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/java.png" alt="Tailwind" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Java</p>
+          </div>
+        </div>
+        <div class="flex gap-8">
+           <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/node.png" alt="HTML" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Node</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/express.png" alt="CSS" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Express</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/mongodb.png" alt="JavaScript" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">MongoDB</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/sql.png" alt="React" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">SQL</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/cpp.png" alt="Bootstrap" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">C++</p>
+          </div>
+
+          <div class="skill-card flex flex-col items-center min-w-[200px] p-4 rounded-xl  bg-white dark:bg-transparent">
+            <div class="relative w-28 h-28 mb-3">
+              <svg class="absolute top-0 left-0 w-full h-full -rotate-90 z-0">
+                <circle cx="56" cy="56" r="50" stroke="#e5e7eb" stroke-width="10" fill="none"/>
+                <circle class="circle-animation" cx="56" cy="56" r="40" stroke="#000" stroke-width="10" fill="none"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <img src="./images/java.png" alt="Tailwind" class="w-20 h-20 object-contain rounded-full"/>
+              </div>
+            </div>
+            <p class="text-lg font-medium">Java</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--Profiles Section-->
+    <div id="profiles" class="w-full px-[12%] py-20 scroll-mt-10">
+  <h4 class="text-center mb-2 text-lg">My Achievements</h4>
+  <h2 class="text-center text-5xl">Profiles</h2>
+  <div class="flex flex-wrap md:flex-nowrap justify-center gap-6 px-4 py-10">
+    <div class="glow-card relative w-full md:w-1/4 h-50 rounded-xl p-0.5 bg-white backdrop-blur-md text-gray-800 overflow-hidden -lg cursor-pointer">
+      <div class="glow-spot pointer-events-none blur-xl bg-gradient-to-r from-[#aabe76] via-green-400 to-[#0be654] size-60 absolute z-0 opacity-0 transition-opacity duration-300"></div>
+      <div class="transition-transform duration-300 hover:scale-105 relative z-10 bg-white dark:bg-[#d9dde0] dark:hover:bg-[rgba(69, 93, 97, 0.1)] p-6 h-full w-full rounded-[10px] flex flex-col items-center justify-center text-center">
+        <img src="./images/leetcode.png" alt="Profile Avatar" class="w-16 h-16 rounded-full  my-4" />
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">LeetCode</h2>
+        <p class="text-md text-black-500 font-medium mb-4">Max rating.1496</p>
+        <p class="text-md text-black-500 font-medium mb-4">Earned 3 Badges.Solved 500+ DSA Problems on Leetcode.</p>
+        <div class="flex space-x-4 mb-4 text-xl text-indigo-600">
+          <a href="https://leetcode.com/u/Swap_nil28/" target=”_blank” class="hover:-translate-y-0.5 transition"><button class="py-3 px-8 w-max flex items-center justify-between gap-2 text-md bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-black dark:text-xl dark:border-[0.5px] dark:hover:bg-darkHover/10 dark:hover:text-white">@Swapnils_2808</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="glow-card relative w-full md:w-1/4 h-50 rounded-xl p-0.5 bg-white backdrop-blur-md text-gray-800 overflow-hidden -lg cursor-pointer">
+      <div class="glow-spot pointer-events-none blur-xl bg-gradient-to-r from-[#aabe76] via-green-400 to-[#0be654] size-60 absolute z-0 opacity-0 transition-opacity duration-300"></div>
+      <div class="transition-transform duration-300 hover:scale-105 relative z-10 bg-white dark:bg-[#d9dde0] p-6 h-full w-full rounded-[10px] flex flex-col items-center justify-center text-center">
+        <img src="./images/gfg.png" alt="Profile Avatar" class="w-16 h-16 rounded-full  my-4" />
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">GFG</h2>
+        <p class="text-sm text-black-500 font-medium mb-4 flex items-center gap-1">2 <img src="./images/star.png" alt="star" class="w-5 h-5 inline-block"> on GFG.</p>
+        <p class="text-md text-black-500 font-medium mb-4">Secured Institute rank 62.Solved 500+ DSA Problems on GFG.</p>
+        <div class="flex space-x-4 mb-4 text-xl text-indigo-600">
+          <a href="https://www.geeksforgeeks.org/user/swapnils2808/" target=”_blank” class="hover:-translate-y-0.5 transition"><button class="py-3 px-8 w-max flex items-center justify-between gap-2 text-md bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-black dark:text-xl dark:border-[0.5px] dark:hover:bg-darkHover/10 dark:hover:text-white">@Swapnils_2808</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="glow-card relative w-full md:w-1/4 h-50 rounded-xl p-0.5 backdrop-blur-md text-gray-800 overflow-hidden -lg cursor-pointer">
+      <div class="glow-spot pointer-events-none blur-xl bg-gradient-to-r from-[#aabe76] via-green-400 to-[#0be654] size-60 absolute z-0 opacity-0 transition-opacity duration-300"></div>
+      <div class="transition-transform duration-300 hover:scale-105 relative z-10 bg-white dark:bg-[#d9dde0] p-6 h-full w-full rounded-[10px] flex flex-col items-center justify-center text-center">
+        <img src="./images/codechef.png" alt="Profile Avatar" class="w-16 h-16 rounded-full  my-4" />
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">Codechef</h2>
+         <p class="text-sm text-black-500 font-medium mb-4 flex items-center gap-1">1 <img src="./images/star.png" alt="star" class="w-5 h-5 inline-block"> on GFG max(1219).</p>
+         <p class="text-md text-black-500 font-medium mb-4">Solved 200+ DSA Problems on codechef.</p>
+        <div class="flex space-x-4 mb-4 text-xl text-indigo-600">
+         <a href="https://www.codechef.com/users/swapnil_02" target=”_blank” class="hover:-translate-y-0.5 transition"><button class="py-3 px-8 w-max flex items-center justify-between gap-2 text-md bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-black dark:text-xl dark:border-[0.5px] dark:hover:bg-darkHover/10 dark:hover:text-white">@Swapnils_2808</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="glow-card relative w-full md:w-1/4 h-50 rounded-xl p-0.5 bg-white backdrop-blur-md text-gray-800 overflow-hidden -lg cursor-pointer">
+      <div class="glow-spot pointer-events-none blur-xl bg-gradient-to-r from-[#aabe76] via-green-400 to-[#0be654] size-60 absolute z-0 opacity-0 transition-opacity duration-300"></div>
+      <div class="transition-transform duration-300 hover:scale-105 relative z-10 bg-white dark:bg-[#d9dde0] p-6 h-full w-full rounded-[10px] flex flex-col items-center justify-center text-center">
+        <img src="./images/hacckerrank.png" alt="Profile Avatar" class="w-16 h-16 rounded-full  my-4" />
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">Hackerrank</h2>
+         <p class="text-sm text-black-500 font-medium mb-4 flex items-center gap-1">5 <img src="./images/star.png" alt="star" class="w-5 h-5 inline-block"> on GFG.</p>
+         <p class="text-md text-black-500 font-medium mb-4">Solved C,C++,Java ans SQL Questions.</p>
+        <div class="flex space-x-4 mb-4 text-xl text-indigo-600">
+          <a href="https://www.hackerrank.com/profile/swapnilsuryawan4" target=”_blank” class="hover:-translate-y-0.5 transition"><button class="py-3 px-8 w-max flex items-center justify-between gap-2 text-md bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-black dark:text-xl dark:border-[0.5px] dark:hover:bg-darkHover/10 dark:hover:text-white">@Swapnils_2808</button></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    </div>
+
+
+    <!--Projects Section-->
+    <div id="projects" class="w-full px-[12%] py-20 scroll-mt-10">
+  <h4 class="text-center mb-2 text-lg">Portfolio</h4>
+  <h2 class="text-center text-5xl">My Projects</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+    <div class="relative group overflow-hidden rounded-lg -lg">
+      <img src="./images/project1.jpg" alt="Grocery Store" class="w-full h-full object-cover duration-300 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center p-5 
+              opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+        <h4 class="text-white text-2xl font-semibold mb-2">Medicare Application</h4>
+        <p class="text-gray-200 text-sm mb-4">Doctor Appointment Booking System application that allows patients to schedule, manage, and track medical appointments with doctors online.</p>
+        <p class="text-gray-200 text-sm mb-4">TechStack: React and tailwind CSS</p>
+        <div class="flex items-center gap-6 text-white text-sm">
+            <a href="https://swapneel5475.github.io/Medicare/" target="_blank" class="flex items-center gap-2">Live demo
+               <img src="./images/link.png" alt="Live Demo" class="w-4">
+            </a>
+            <a href="https://github.com/Swapneel5475/Medicare" target="_blank" class="flex items-center gap-2">GitHub
+               <img src="./images/github.png" alt="GitHub" class="w-4">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group overflow-hidden rounded-lg -lg">
+      <img src="./images/project2.jpg" alt="Temperature Converter" class="w-full h-full object-cover duration-300 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center p-5 
+              opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+        <h4 class="text-white text-2xl font-semibold mb-2">FreshMart Grocery Store</h4>
+        <p class="text-gray-200 text-sm mb-4">Developed a full-stack Grocery Store web application enabling users to browse products, manage carts, and place orders with secure authentication and real-time updates.</p>
+        <p class="text-gray-200 text-sm mb-4">TechStack Used: React, tailwind, Express, MongoDB</p>
+        <div class="flex items-center gap-6 text-white text-sm">
+            <a href="https://your-live-demo-link.com" target="_blank" class="flex items-center gap-2">Live demo
+               <img src="./images/link.png" alt="Live Demo" class="w-4">
+            </a>
+            <a href="https://github.com/Swapneel5475/Grocery-Store" target="_blank" class="flex items-center gap-2">GitHub
+               <img src="./images/github.png" alt="GitHub" class="w-4">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group overflow-hidden rounded-lg -lg">
+      <img src="./images/project3.jpg" alt="Restaurant Page" class="w-full h-full object-cover duration-300 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center p-5 
+              opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+        <h4 class="text-white text-2xl font-semibold mb-2">Temperature Converter</h4>
+        <p class="text-gray-200 text-sm mb-4">A simple Temperature Converter that converts values between Celsius and Fahrenheit using user input.</p>
+        <p class="text-gray-200 text-sm mb-4">TechStack Used: HTML, CSS, JavaScript</p>
+        <div class="flex items-center gap-6 text-white text-sm">
+            <a href="https://your-live-demo-link.com" target="_blank" class="flex items-center gap-2">Live demo
+               <img src="./images/link.png" alt="Live Demo" class="w-4">
+            </a>
+            <a href="https://github.com/Swapneel5475/Temperature-Converter" target="_blank" class="flex items-center gap-2">GitHub
+               <img src="./images/github.png" alt="GitHub" class="w-4">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group overflow-hidden rounded-lg -lg">
+      <img src="./images/project4.jpg" alt="To Do List" class="w-full h-full object-cover duration-300 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center p-5 
+              opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+        <h4 class="text-white text-2xl font-semibold mb-2">To Do List</h4>
+        <p class="text-gray-200 text-sm mb-4">Developed a Todo app that allows users to add, edit, and delete tasks for efficient task management.</p>
+        <p class="text-gray-200 text-sm mb-4">TechStack Used: HTML, CSS, JavaScript</p>
+        <div class="flex items-center gap-6 text-white text-sm">
+            <a href="https://your-live-demo-link.com" target="_blank" class="flex items-center gap-2">Live demo
+               <img src="./images/link.png" alt="Live Demo" class="w-4">
+            </a>
+            <a href="https://github.com/Swapneel5475/Todo_List" target="_blank" class="flex items-center gap-2">GitHub
+               <img src="./images/github.png" alt="GitHub" class="w-4">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group overflow-hidden rounded-lg -lg">
+      <img src="./images/project5.jpg" alt="To Do List" class="w-full h-full object-cover duration-300 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center p-5 
+              opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+        <h4 class="text-white text-2xl font-semibold mb-2">Novus Hotel</h4>
+        <p class="text-gray-200 text-sm mb-4">Developed a responsive landing page for a hotel showcasing its services, amenities, and booking options.</p>
+        <p class="text-gray-200 text-sm mb-4">TechStack Used: HTML, CSS</p>
+        <div class="flex items-center gap-6 text-white text-sm">
+            <a href="https://your-live-demo-link.com" target="_blank" class="flex items-center gap-2">Live demo
+               <img src="./images/link.png" alt="Live Demo" class="w-4">
+            </a>
+            <a href="https://github.com/Swapneel5475/Landing-Page" target="_blank" class="flex items-center gap-2">GitHub
+               <img src="./images/github.png" alt="GitHub" class="w-4">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group overflow-hidden rounded-lg -lg">
+      <img src="./images/project6.jpg" alt="To Do List" class="w-full h-full object-cover duration-300 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center p-5 
+              opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+        <h4 class="text-white text-2xl font-semibold mb-2">Weather App</h4>
+        <p class="text-gray-200 text-sm mb-4">Developed a Weather Application that provides real-time weather information for any specified city.</p>
+        <p class="text-gray-200 text-sm mb-4">TechStack Used: HTML, CSS, JavaScript</p>
+        <div class="flex items-center gap-6 text-white text-sm">
+            <a href="https://your-live-demo-link.com" target="_blank" class="flex items-center gap-2">Live demo
+               <img src="./images/link.png" alt="Live Demo" class="w-4">
+            </a>
+            <a href="https://github.com/Swapneel5475/Weather-App" target="_blank" class="flex items-center gap-2">GitHub
+               <img src="./images/github.png" alt="GitHub" class="w-4">
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+
+    <!--Contact Section-->
+    <div id="contact" class="dark:bg-none w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center">
+        <h4 class="text-center mb-2 text-lg">let's Connect</h4>
+        <h2 class="text-center text-5xl">Contact Me</h2>
+        <form action="" class="max-w-2xl mx-auto">
+            <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+                <input type="text" placeholder="Enter Your name" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/10 dark:border-white/90">
+                <input type="email" placeholder="Enter Your email" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/10 dark:border-white/90">
+            </div>
+            <textarea rows="5" placeholder="Enter your Message" class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/10 dark:border-white/90"></textarea>
+            <button class="py-3 px-8 w-max flex items-center justify-between gap-2 text-md bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-darkHover/10 dark:text-xl dark:border-[0.5px] dark:hover:bg-black dark:hover:text-white scroll-mt-20">Send message<img src="./images/right_arrow.png" alt="icon" class="w-7 h-7"></button>
+        </form>
+    </div>
+
+    <!--Footer Section-->
+     <div id="profiles" class="w-full px-[12%] py-10 scroll-mt-20">
+      <div class="flex flex-wrap justify-between gap-12 md:gap-6">
+      <div class="max-w-80">
+        <h2 class="text-start text-4xl dark:text-white">About Me</h2>
+        <p class="text-sm mt-3">I'm a seasoned front-end developer with hands-on experience in crafting web applications that not only look visually stunning but also deliver exceptional user experiences.</p>
+        <div class="flex items-center gap-3 mt-4 text-gray-700">
+          <ul class="flex items-center justify-center gap-1 sm:gap-2">
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square cursor-pointer hover:-translate-y-1 duration-500 ">
+                        <a href="https://www.linkedin.com/in/swapnil-suryawanshi2808"><img src="./images/linkedin.png" alt="vscode" class="w-6 sm:w-8 dark:hidden"></a>
+                        <a href="https://www.linkedin.com/in/swapnil-suryawanshi2808"> <img src="./images/linkedin_dark.png" alt="vscode" class="w-6 sm:w-8 hidden dark:block"></a>
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-squarerounded-lg cursor-pointer hover:-translate-y-1 duration-500 ">
+                        <a href="https://github.com/Swapneel5475"><img src="./images/github.png" alt="vscode" class="w-6 sm:w-8 dark:hidden"></a>
+                        <a href="https://github.com/Swapneel5475"> <img src="./images/github_dark.png" alt="vscode" class="w-6 sm:w-8 hidden dark:block"></a>
+                    </li>
+                </ul>
+        </div>
+      </div>
+      <div>
+        <p class="text-md font-semibold text-gray-800 dark:text-white">Quick Links</p>
+        <ul class="mt-3 flex flex-col gap-2 text-sm">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#profiles">Profiles</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-md font-semibold text-gray-800  dark:text-white">Contact</p>
+        <ul class="mt-3 flex flex-col gap-2 text-sm">
+          <li><a href="">swapnils5475@gmail.com</a></li>
+          <li><a href="">+91- 9156274673</a></li>
+        </ul>
+      </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
